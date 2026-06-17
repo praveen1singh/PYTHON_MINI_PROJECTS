@@ -1,0 +1,39 @@
+import random
+import time
+
+print("Welcome to Hangman! ")
+
+words = ["hacker","bounty","vdp","random"]
+
+# create a empty list
+list=[]
+
+# for each letter in the secret_word add a "_" that will be printed to the console
+# example if the word is hacker "_","_","_","_","_","_"
+
+print("Randomly choosing a secret_word from wordlist !")
+time.sleep(2)
+
+secret_word = random.choice(words)
+print("Converting it to '_' form ")
+time.sleep(3)
+
+
+# for letter in range(len(secret_word)):
+#     list.append("_")
+
+for letter in range(len(secret_word)):
+    list += "_"
+print(list)
+
+print("\n")
+guess = input("Guess a letter :").lower()
+# loop through each letter in the chosen word
+# if the letter is in the word replace the "_" with the letter
+# it should look like this "_","a","c","_","_","r"
+
+for position in range(len(secret_word)):
+    letter = secret_word[position]
+    if  letter == guess:
+        list[position]= letter
+print(list)
