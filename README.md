@@ -1,15 +1,16 @@
-# 🎮 Hangman Game (Python)
+# 🎮 Hangman Game - Python
 
 A simple command-line Hangman game built using Python.  
-The program randomly selects a secret word and allows the user to guess letters.
+The program randomly selects a secret word and the player has to guess the letters until the complete word is revealed.
 
 ## 📌 Features
 
-- Random word selection
-- Converts the secret word into hidden "_" format
+- Random secret word selection
+- Hidden word display using `_`
 - User can guess letters
-- Reveals correct guessed letters
-- Uses Python loops and lists
+- Correct guesses reveal letters
+- Game continues until the word is completed
+- Beginner-friendly Python project
 
 ## 🛠️ Technologies Used
 
