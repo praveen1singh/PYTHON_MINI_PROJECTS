@@ -1,39 +1,38 @@
+# HANGMAN GAME WITH WHILE Loop
+
 import random
 import time
 
-print("Welcome to Hangman! ")
+print("Welcome to Hangman Game !!!\n")
 
-words = ["hacker","bounty","vdp","random"]
+wordlist=["hacker","bounties","vdp","hall of fame","pentester","developer"]
 
-# create a empty list
-list=[]
-
-# for each letter in the secret_word add a "_" that will be printed to the console
-# example if the word is hacker "_","_","_","_","_","_"
-
-print("Randomly choosing a secret_word from wordlist !")
+print("Randomly choosing a secret word  !!!")
 time.sleep(2)
 
-secret_word = random.choice(words)
-print("Converting it to '_' form ")
-time.sleep(3)
+secret_word=random.choice(wordlist)
+print("Converting secret word into '_' form ")
+time.sleep(4)
 
-
-# for letter in range(len(secret_word)):
-#     list.append("_")
+# Empty list
+list=[]
 
 for letter in range(len(secret_word)):
     list += "_"
 print(list)
 
 print("\n")
-guess = input("Guess a letter :").lower()
-# loop through each letter in the chosen word
-# if the letter is in the word replace the "_" with the letter
-# it should look like this "_","a","c","_","_","r"
 
-for position in range(len(secret_word)):
-    letter = secret_word[position]
-    if  letter == guess:
-        list[position]= letter
-print(list)
+
+game_over = False
+while not game_over:
+    guess = input("Guess a letter : ").lower()
+    for position in range(len(secret_word)):
+        letter = secret_word[position]
+        if letter == guess :
+            list[position]= letter
+    print(list)
+
+    if "_" not in list:
+        print("You Won the Game !!!")
+        game_over=True
