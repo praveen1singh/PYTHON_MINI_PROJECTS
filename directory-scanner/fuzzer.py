@@ -12,3 +12,4 @@ def loop():
              print(data)
              print(res.status_code)
              print(word)
+loop()
